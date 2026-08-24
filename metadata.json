@@ -1,0 +1,7 @@
+{
+  "name": "VietWander - Du Lịch, Đặt Vé & Khách Sạn",
+  "description": "Nền tảng du lịch tinh tế với thiết kế tối giản: khám phá điểm đến, đặt vé, đặt phòng khách sạn và lịch trình AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
