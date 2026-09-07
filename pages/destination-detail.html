@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Điểm Đến - VietWander</title>
+  <meta name="description" content="Khám phá chi tiết điểm đến, kinh nghiệm du lịch, ẩm thực đặc sản và đặt vé khách sạn.">
+  
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <span>VietWander</span>
+        </a>
+
+        <nav class="d-none d-lg-flex align-items-center gap-2">
+          <a href="/index.html" class="nav-link-custom">Trang chủ</a>
+          <a href="/pages/destinations.html" class="nav-link-custom active">Điểm đến</a>
+          <a href="/pages/planner.html" class="nav-link-custom">Lập lịch trình AI</a>
+          <a href="/pages/blog.html" class="nav-link-custom">Cẩm nang</a>
+          <a href="/pages/about.html" class="nav-link-custom">Giới thiệu</a>
+          <a href="/pages/contact.html" class="nav-link-custom">Liên hệ</a>
+        </nav>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="/pages/destinations.html" class="btn-outline-custom">← Quay lại danh sách</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Destination Detail View -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- Top Overview Banner -->
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-7">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill" id="detail-region">Miền Trung</span>
+            <span class="text-muted small">Thời điểm lý tưởng: <strong id="detail-season">Tháng 2 - Tháng 8</strong></span>
+          </div>
+          <h1 class="display-4 font-serif fw-bold text-dark mb-3" id="detail-title">Hội An</h1>
+          <p class="fs-5 text-secondary mb-4" id="detail-desc">
+            Phố cổ đèn lồng bên sông Hoài, kiến trúc giao thoa cổ kính lưu giữ hàng trăm năm văn hóa và ẩm thực phong phú.
+          </p>
+          <div class="d-flex align-items-center gap-3 flex-wrap">
+            <button class="btn-primary-custom" id="btn-quick-plan">
+              ✨ Lập lịch trình AI cho <span class="dest-name-label">Hội An</span>
+            </button>
+            <button class="btn-outline-custom" id="btn-detail-wishlist" data-wishlist-id="hoi-an" data-wishlist-name="Hội An">
+              <span>❤️ Thêm vào yêu thích</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="rounded-4 overflow-hidden border shadow-sm" style="max-height: 400px;">
+            <img src="/assets/images/hoi-an.jpg" alt="Chi tiết điểm đến" class="img-fluid w-100 h-100 object-fit-cover" id="detail-main-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Grid & Booking Card -->
+      <div class="row g-4">
+        
+        <!-- Left Content: Highlights, Foods & Info -->
+        <div class="col-lg-8">
+          
+          <!-- Key Highlights -->
+          <div class="bg-white p-4 p-md-5 rounded-4 border mb-4">
+            <h3 class="font-serif h4 text-dark mb-4">🌟 Trải Nghiệm Nổi Bật</h3>
+            <div class="row g-3" id="detail-highlights-container">
+              <div class="col-sm-6">
+                <div class="p-3 bg-light rounded-3 border-0">
+                  <h5 class="h6 fw-bold text-dark mb-1">Thả hoa đăng trên sông Hoài</h5>
+                  <p class="small text-muted mb-0">Ngắm nhìn hàng nghìn ánh đèn hoa đăng lấp lánh phản chiếu trên mặt nước huyền ảo.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-light rounded-3 border-0">
+                  <h5 class="h6 fw-bold text-dark mb-1">Đạp xe qua làng rau Trà Quế</h5>
+                  <p class="small text-muted mb-0">Hít thở không khí đồng quê yên bình và thử trải nghiệm làm nông dân bản địa.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-light rounded-3 border-0">
+                  <h5 class="h6 fw-bold text-dark mb-1">Check-in Chùa Cầu & Nhà cổ Phùng Hưng</h5>
+                  <p class="small text-muted mb-0">Chiêm ngưỡng kiến trúc chạm khắc tinh xảo có tuổi đời hơn 2 thế kỷ.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-light rounded-3 border-0">
+                  <h5 class="h6 fw-bold text-dark mb-1">Thưởng thức trà thảo mộc Mót</h5>
+                  <p class="small text-muted mb-0">Hương vị sả chanh quế hồi đặc trưng mát lành của một góc phố nhỏ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Iconic Local Food -->
+          <div class="bg-white p-4 p-md-5 rounded-4 border mb-4">
+            <h3 class="font-serif h4 text-dark mb-4">🍜 Ẩm Thực Đặc Sắc Không Thể Bỏ Qua</h3>
+            <div class="d-flex flex-wrap gap-2" id="detail-food-container">
+              <span class="badge bg-light text-dark border p-2.5 fs-6">Cao Lầu Thanh</span>
+              <span class="badge bg-light text-dark border p-2.5 fs-6">Cơm Gà Bà Buội</span>
+              <span class="badge bg-light text-dark border p-2.5 fs-6">Bánh mì Phượng</span>
+              <span class="badge bg-light text-dark border p-2.5 fs-6">Bánh đập hến xào Cẩm Nam</span>
+              <span class="badge bg-light text-dark border p-2.5 fs-6">Chè bắp Cẩm Nam</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Sidebar: Quick Booking Form -->
+        <div class="col-lg-4">
+          <div class="bg-white p-4 rounded-4 border shadow-sm position-sticky" style="top: 90px;">
+            <h4 class="font-serif h5 text-dark mb-2">Đăng Ký Tư Vấn & Đặt Chỗ</h4>
+            <p class="small text-muted mb-3">Để lại thông tin, cố vấn du lịch sẽ liên hệ cung cấp vé và phòng khách sạn giá ưu đãi nhất.</p>
+
+            <form id="destination-booking-form">
+              <input type="hidden" name="destination" id="form-dest-name" value="Hội An">
+              
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Họ và tên *</label>
+                <input type="text" name="fullName" class="form-control form-control-custom" placeholder="Nguyễn Văn A">
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Số điện thoại (Zalo) *</label>
+                <input type="tel" name="phone" class="form-control form-control-custom" placeholder="0912 345 678">
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Email *</label>
+                <input type="email" name="email" class="form-control form-control-custom" placeholder="email@gmail.com">
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Ngày khởi hành dự kiến</label>
+                <input type="date" name="travelDate" class="form-control form-control-custom">
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Dịch vụ quan tâm</label>
+                <select name="serviceType" class="form-select form-select-custom">
+                  <option value="all">Combo Vé máy bay + Khách sạn trọn gói</option>
+                  <option value="hotel">Chỉ đặt phòng khách sạn/resort</option>
+                  <option value="transport">Chỉ đặt vé máy bay / xe limousine</option>
+                  <option value="custom">Thiết kế tour riêng theo yêu cầu</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary-custom w-100 justify-content-center py-2.5">
+                <span>Gửi yêu cầu giữ chỗ</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center text-muted small">
+      © 2026 VietWander. Tất cả quyền được bảo lưu.
+    </div>
+  </footer>
+
+  <script src="/assets/js/validation.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const DESTINATIONS_DATA = {
+      'hoi-an': {
+        title: 'Hội An',
+        region: 'Miền Trung',
+        season: 'Tháng 2 - Tháng 8',
+        img: '/assets/images/hoi-an.jpg',
+        desc: 'Phố cổ đèn lồng bên sông Hoài, kiến trúc giao thoa cổ kính lưu giữ hàng trăm năm văn hóa và ẩm thực phong phú.',
+        highlights: [
+          { title: 'Thả hoa đăng trên sông Hoài', desc: 'Ngắm nhìn hàng nghìn ánh đèn hoa đăng lấp lánh phản chiếu trên dòng sông êm đềm.' },
+          { title: 'Đạp xe làng rau Trà Quế', desc: 'Hít thở không khí đồng quê yên bình và thử một ngày làm nông dân mộc mạc.' },
+          { title: 'Chùa Cầu & Nhà cổ trăm năm', desc: 'Kiến trúc chạm khắc độc đáo ghi dấu lịch sử thương cảng sầm uất.' },
+          { title: 'Thưởng trà thảo mộc Mót', desc: 'Thức uống thơm ngọt dịu mát níu chân mọi du khách trên đường Trần Phú.' }
+        ],
+        foods: ['Cao Lầu Thanh', 'Cơm gà Bà Buội', 'Bánh mì Phượng', 'Bánh đập hến xào', 'Chè bắp Cẩm Nam']
+      },
+      'sapa': {
+        title: 'Sa Pa',
+        region: 'Miền Bắc',
+        season: 'Tháng 9 - Tháng 4 năm sau',
+        img: '/assets/images/sapa.jpg',
+        desc: 'Thị trấn mờ sương với thung lũng Mường Hoa kỳ vĩ, chinh phục đỉnh Fansipan và bản sắc ấm áp của đồng bào vùng cao.',
+        highlights: [
+          { title: 'Chinh phục đỉnh Fansipan 3.143m', desc: 'Chiêm ngưỡng biển mây bồng bềnh và quần thể tâm linh trên đỉnh non cao.' },
+          { title: 'Đi dạo bản Tả Van, Cát Cát', desc: 'Ngắm nhìn dòng suối róc rách và tìm hiểu trang phục thổ cẩm truyền thống.' },
+          { title: 'Mùa lúa chín vàng óng', desc: 'Ruộng bậc thang uốn lượn như dải lụa vàng giữa mây ngàn Tây Bắc.' },
+          { title: 'Thưởng thức ẩm thực nướng', desc: 'Bếp than hồng xua tan cái lạnh vùng cao với cơm lam, gà đen, trứng nướng.' }
+        ],
+        foods: ['Thắng cố A Quỳnh', 'Lẩu cá hồi Sa Pa', 'Cơm lam nướng than', 'Thịt lợn cắp nách', 'Rau cải mèo xào']
+      },
+      'da-nang': {
+        title: 'Đà Nẵng',
+        region: 'Biển Đảo',
+        season: 'Tháng 3 - Tháng 9',
+        img: '/assets/images/da-nang.jpg',
+        desc: 'Thành phố đáng sống với bãi biển Mỹ Khê quyến rũ, cầu Rồng phun lửa rực rỡ và bán đảo Sơn Trà hoang sơ.',
+        highlights: [
+          { title: 'Tắm biển Mỹ Khê', desc: 'Bãi cát thoai thoải, làn nước trong xanh được tạp chí Forbes vinh danh.' },
+          { title: 'Bán đảo Sơn Trà & Chùa Linh Ứng', desc: 'Tượng Phật Bà cao 67m hướng mắt nhìn ra đại dương bao la.' },
+          { title: 'Ngắm Cầu Rồng phun lửa & nước', desc: 'Màn trình diễn ánh sáng sống động thu hút hàng ngàn người xem cuối tuần.' },
+          { title: 'Cầu Vàng Bà Nà Hills', desc: 'Đôi bàn tay khổng lồ nâng đỡ dải lụa vàng giữa lưng chừng mây trời.' }
+        ],
+        foods: ['Bánh tráng cuốn thịt heo Đại Lộc', 'Mì Quảng ếch Bếp Trang', 'Bún chả cá Bà Lữ', 'Hải sản Năm Đảnh', 'Bánh xèo Bà Dưỡng']
+      },
+      'phu-quoc': {
+        title: 'Phú Quốc',
+        region: 'Nghỉ Dưỡng',
+        season: 'Tháng 11 - Tháng 4',
+        img: '/assets/images/phu-quoc.jpg',
+        desc: 'Đảo ngọc thiên đường với những bãi biển màu lam ngọc, hoàng hôn tuyệt mỹ và trải nghiệm nghỉ dưỡng 5 sao sang trọng.',
+        highlights: [
+          { title: 'Tắm biển Bãi Sao & Bãi Khem', desc: 'Cát trắng mịn như kem và làn nước trong vắt nhìn thấu đáy.' },
+          { title: 'Cáp treo Hòn Thơm vượt biển', desc: 'Tuyến cáp treo 3 dây vượt biển dài nhất thế giới ngắm nhìn toàn cảnh đảo ngọc.' },
+          { title: 'Lặn ngắm san hô Nam Đảo', desc: 'Khám phá hệ sinh thái rạn san hô rực rỡ sắc màu tại Hòn Mây Rút.' },
+          { title: 'Ngắm hoàng hôn Sunset Sanato', desc: 'Khoảnh khắc mặt trời đỏ rực chìm xuống biển khơi với các tác phẩm điêu khắc nghệ thuật.' }
+        ],
+        foods: ['Gỏi cá trích Phú Quốc', 'Bún quậy Kiến Xây', 'Nhum biển nướng mỡ hành', 'Ghẹ Hàm Ninh', 'Hải sản chợ đêm Dinh Cậu']
+      },
+      'ha-giang': {
+        title: 'Hà Giang',
+        region: 'Miền Bắc',
+        season: 'Tháng 10 - Tháng 3',
+        img: '/assets/images/ha-giang.jpg',
+        desc: 'Vẻ đẹp tráng lệ của cao nguyên đá Đồng Văn, dòng sông Nho Quế màu xanh ngọc bích và con đèo Mã Pí Lèng hùng vĩ nhất Việt Nam.',
+        highlights: [
+          { title: 'Du thuyền trên sông Nho Quế', desc: 'Len lỏi qua hẻm vực Tu Sản sâu nhất Đông Nam Á.' },
+          { title: 'Chinh phục Đèo Mã Pí Lèng', desc: 'Một trong tứ đại đỉnh đèo với cung đường hiểm trở ngoạn mục.' },
+          { title: 'Thăm Dinh thự họ Vương (Vua Mèo)', desc: 'Kiến trúc bề thế pha trộn nét H\'Mông và hoa văn phong thủy cổ.' },
+          { title: 'Mùa hoa tam giác mạch', desc: 'Những thảm hoa hồng tím e ấp giữa các phiến đá tai mèo sắc nhọn.' }
+        ],
+        foods: ['Thịt trâu gác bếp', 'Bánh tam giác mạch nướng', 'Cháo ấu tẩu', 'Phở chua Đồng Văn', 'Rượu ngô men lá']
+      },
+      'ninh-binh': {
+        title: 'Ninh Bình',
+        region: 'Miền Bắc',
+        season: 'Tháng 1 - Tháng 5 & Tháng 9 - 10',
+        img: '/assets/images/ninh-binh.jpg',
+        desc: 'Vịnh Hạ Long trên cạn với di sản kép Tràng An, dòng suối Tam Cốc rực rỡ mùa lúa chín và đỉnh Hang Múa view triệu đô.',
+        highlights: [
+          { title: 'Chèo thuyền qua các hang động Tràng An', desc: 'Lạc vào chốn bồng lai tiên cảnh non nước mây trời giao hòa.' },
+          { title: 'Leo đỉnh Hang Múa ngắm Tam Cốc', desc: 'Vượt qua gần 500 bậc đá để chạm tay tới view toàn cảnh kỳ vĩ.' },
+          { title: 'Viếng quần thể chùa Bái Đính', desc: 'Ngôi chùa linh thiêng với nhiều kỷ lục Phật giáo của châu Á.' },
+          { title: 'Đạp xe dạo quanh đầm sen Bích Động', desc: 'Khung cảnh làng quê Bắc Bộ thanh bình, giản dị và trong trẻo.' }
+        ],
+        foods: ['Cơm cháy Ninh Bình chấm sốt dê', 'Thịt dê núi nướng tảng', 'Gỏi cá nhệch Kim Sơn', 'Nem chua Yên Mạc', 'Ốc núi hấp gừng']
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const destId = urlParams.get('id') || 'hoi-an';
+      const data = DESTINATIONS_DATA[destId] || DESTINATIONS_DATA['hoi-an'];
+
+      document.title = `${data.title} - Chi Tiết Điểm Đến VietWander`;
+      document.getElementById('detail-title').textContent = data.title;
+      document.getElementById('detail-region').textContent = data.region;
+      document.getElementById('detail-season').textContent = data.season;
+      document.getElementById('detail-desc').textContent = data.desc;
+      document.getElementById('detail-main-img').src = data.img;
+      document.getElementById('detail-main-img').alt = data.title;
+      document.getElementById('form-dest-name').value = data.title;
+
+      document.querySelectorAll('.dest-name-label').forEach(el => el.textContent = data.title);
+
+      const wishlistBtn = document.getElementById('btn-detail-wishlist');
+      if (wishlistBtn) {
+        wishlistBtn.setAttribute('data-wishlist-id', destId);
+        wishlistBtn.setAttribute('data-wishlist-name', data.title);
+      }
+
+      const planBtn = document.getElementById('btn-quick-plan');
+      if (planBtn) {
+        planBtn.addEventListener('click', () => {
+          window.location.href = `/pages/planner.html?destination=${encodeURIComponent(data.title)}`;
+        });
+      }
+
+      // Render highlights
+      const hContainer = document.getElementById('detail-highlights-container');
+      if (hContainer) {
+        hContainer.innerHTML = data.highlights.map(h => `
+          <div class="col-sm-6">
+            <div class="p-3 bg-light rounded-3 border-0">
+              <h5 class="h6 fw-bold text-dark mb-1">${h.title}</h5>
+              <p class="small text-muted mb-0">${h.desc}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render foods
+      const fContainer = document.getElementById('detail-food-container');
+      if (fContainer) {
+        fContainer.innerHTML = data.foods.map(f => `
+          <span class="badge bg-light text-dark border p-2.5 fs-6">${f}</span>
+        `).join('');
+      }
+
+      // Form validation
+      const form = document.getElementById('destination-booking-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const rules = {
+            fullName: { required: true, minLength: 3, messages: { required: 'Vui lòng nhập họ và tên của bạn' } },
+            phone: { required: true, phone: true },
+            email: { required: true, email: true }
+          };
+
+          if (window.Validation && window.Validation.validate(form, rules)) {
+            window.VietWander?.showToast(`Cảm ơn bạn! Yêu cầu tư vấn ${data.title} đã được gửi thành công.`, 'success');
+            form.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

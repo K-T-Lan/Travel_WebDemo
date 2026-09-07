@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lập Lịch Trình Du Lịch AI - VietWander Planner</title>
+  <meta name="description" content="Trợ lý AI xây dựng lịch trình du lịch chi tiết tại Việt Nam: hoạt động sáng, chiều, tối, quán ăn đặc sản và dự toán ngân sách.">
+  
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <span>VietWander</span>
+        </a>
+
+        <nav class="d-none d-lg-flex align-items-center gap-2">
+          <a href="/index.html" class="nav-link-custom">Trang chủ</a>
+          <a href="/pages/destinations.html" class="nav-link-custom">Điểm đến</a>
+          <a href="/pages/planner.html" class="nav-link-custom active">Lập lịch trình AI</a>
+          <a href="/pages/blog.html" class="nav-link-custom">Cẩm nang</a>
+          <a href="/pages/about.html" class="nav-link-custom">Giới thiệu</a>
+          <a href="/pages/contact.html" class="nav-link-custom">Liên hệ</a>
+        </nav>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="/pages/destinations.html" class="btn-outline-custom">Khám phá điểm đến</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Planner Main Section -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- Page Title -->
+      <div class="text-center max-w-2xl mx-auto mb-5">
+        <span class="badge bg-success-subtle text-success fw-bold px-3 py-1.5 rounded-pill mb-2">
+          ✨ Công Nghệ Gemini AI Du Lịch
+        </span>
+        <h1 class="display-5 font-serif fw-bold text-dark mb-3">Lập Lịch Trình Tự Động Trong 5 Giây</h1>
+        <p class="text-secondary fs-6">
+          Chỉ cần chọn điểm đến và phong cách yêu thích, trợ lý AI sẽ thiết kế hành trình khoa học, logic di chuyển và gợi ý các món ngon trứ danh.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        
+        <!-- Planner Form Column -->
+        <div class="col-lg-5">
+          <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm">
+            <h3 class="font-serif h5 text-dark mb-4">Thông Tin Chuyến Đi Của Bạn</h3>
+
+            <form id="ai-planner-form">
+              
+              <!-- Destination Field -->
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Điểm đến tại Việt Nam *</label>
+                <input type="text" id="planner-destination" name="destination" class="form-control form-control-custom" placeholder="Ví dụ: Hội An, Sa Pa, Đà Lạt, Phú Quốc..." value="Hội An">
+                
+                <!-- Quick Chips -->
+                <div class="d-flex flex-wrap gap-1.5 mt-2">
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Hội An">Hội An</button>
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Sa Pa">Sa Pa</button>
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Đà Nẵng">Đà Nẵng</button>
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Phú Quốc">Phú Quốc</button>
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Hà Giang">Hà Giang</button>
+                  <button type="button" class="badge bg-light text-dark border p-1.5 rounded-pill quick-dest-chip" data-dest="Ninh Bình">Ninh Bình</button>
+                </div>
+              </div>
+
+              <!-- Duration -->
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Số ngày dự kiến</label>
+                <select id="planner-days" name="days" class="form-select form-select-custom">
+                  <option value="2">2 Ngày 1 Đêm (Cuối tuần nhẹ nhàng)</option>
+                  <option value="3" selected>3 Ngày 2 Đêm (Lý tưởng nhất)</option>
+                  <option value="4">4 Ngày 3 Đêm (Trọn vẹn sâu sắc)</option>
+                  <option value="5">5 Ngày 4 Đêm (Khám phá toàn diện)</option>
+                </select>
+              </div>
+
+              <!-- Budget Tier -->
+              <div class="form-group mb-3">
+                <label class="form-label-custom">Mức ngân sách</label>
+                <select id="planner-budget" name="budget" class="form-select form-select-custom">
+                  <option value="budget">Tiết kiệm (Homestay, ăn uống dân dã, ~800k/ngày)</option>
+                  <option value="standard" selected>Tiêu chuẩn (Khách sạn 3-4 sao, nhà hàng ngon, ~1.6tr/ngày)</option>
+                  <option value="luxury">Sang trọng (Resort 5 sao, ẩm thực cao cấp, ~3.5tr/ngày)</option>
+                </select>
+              </div>
+
+              <!-- Travel Style -->
+              <div class="form-group mb-4">
+                <label class="form-label-custom">Phong cách chuyến đi</label>
+                <select id="planner-style" name="travelStyle" class="form-select form-select-custom">
+                  <option value="couple" selected>Cặp đôi (Lãng mạn, view hoàng hôn, chill cafe)</option>
+                  <option value="family">Gia đình có trẻ nhỏ (Nhịp độ nhẹ nhàng, an toàn)</option>
+                  <option value="friends">Bạn bè phượt (Khám phá nhiều góc mới lạ, check-in)</option>
+                  <option value="relax">Nghỉ dưỡng tĩnh lặng (Chăm sóc sức khỏe, thiên nhiên)</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-primary-custom w-100 justify-content-center py-3 fs-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                <span>Xây dựng lịch trình cùng AI</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Result / Output Column -->
+        <div class="col-lg-7">
+          
+          <!-- Empty Initial State -->
+          <div id="planner-empty" class="bg-white p-5 rounded-4 border text-center h-100 d-flex flex-column align-items-center justify-content-center">
+            <div class="fs-1 mb-3">🗺️</div>
+            <h4 class="font-serif text-dark mb-2">Lịch Trình Cá Nhân Hóa Sẽ Xuất Hiện Tại Đây</h4>
+            <p class="text-muted small" style="max-width: 420px;">
+              Điền thông tin điểm đến bên trái và nhấn nút "Xây dựng lịch trình cùng AI" để xem chi tiết các mốc thời gian sáng, chiều, tối và ẩm thực gợi ý.
+            </p>
+          </div>
+
+          <!-- Loading State Spinner -->
+          <div id="planner-loading" class="bg-white p-5 rounded-4 border text-center h-100" style="display: none;">
+            <div class="spinner-border text-success mb-3" style="width: 3rem; height: 3rem; color: #004D40 !important;" role="status">
+              <span class="visually-hidden">Đang phân tích...</span>
+            </div>
+            <h4 class="font-serif text-dark mb-2">AI Đang Lên Kế Hoạch Cho Bạn...</h4>
+            <p class="text-muted small">Đang tối ưu hóa khoảng cách di chuyển, lựa chọn quán ăn nổi tiếng và cân đối thời gian hợp lý nhất.</p>
+          </div>
+
+          <!-- AI Itinerary Output View -->
+          <div id="planner-result" class="bg-white p-4 p-md-5 rounded-4 border shadow-sm" style="display: none;">
+            
+            <div class="d-flex justify-content-between align-items-start border-bottom pb-4 mb-4">
+              <div>
+                <span class="badge bg-success text-white px-3 py-1 rounded-pill small mb-2">Lịch Trình AI Đã Tối Ưu</span>
+                <h3 class="font-serif text-dark mb-1" id="itinerary-title">Lịch trình du lịch</h3>
+                <p class="text-secondary small mb-0" id="itinerary-overview"></p>
+              </div>
+              <div class="text-end ps-3">
+                <span class="small text-muted d-block">Tổng chi phí dự kiến:</span>
+                <strong class="text-success fs-5" id="itinerary-budget" style="color: #004D40 !important;">0 VNĐ</strong>
+              </div>
+            </div>
+
+            <!-- Days Container -->
+            <div id="itinerary-days-container" class="mb-4">
+              <!-- Timeline cards injected via planner.js -->
+            </div>
+
+            <!-- Packing tips -->
+            <div class="p-3 bg-light rounded-3 border-0 mb-4">
+              <h5 class="h6 fw-bold text-dark mb-2">🎒 Lưu ý hành lý & trang phục:</h5>
+              <ul class="list-unstyled mb-0 small" id="itinerary-packing-tips"></ul>
+            </div>
+
+            <!-- Action footer -->
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+              <button onclick="window.print()" class="btn-outline-custom">
+                <span>🖨️ In lịch trình</span>
+              </button>
+              <a href="/pages/contact.html" class="btn-primary-custom">
+                <span>Nhận hỗ trợ đặt tour/phòng</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center text-muted small">
+      © 2026 VietWander. Tất cả quyền được bảo lưu.
+    </div>
+  </footer>
+
+  <script src="/assets/js/validation.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/planner.js"></script>
+</body>
+</html>
